@@ -6,21 +6,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.SectionIndexer;
 
 import java.util.List;
 
 import ua.com.avatlantik.dubyk.i.dashboardclient.R;
-import ua.com.avatlantik.dubyk.i.dashboardclient.dto.Data.BusinessDirectionDTO;
 
 /**
  * Created by i.dubyk on 30.08.2016.
  */
-public class BusinessDirectionAdapter extends BaseAdapter{
+public class BusinessDirectionAdapter extends BaseAdapter implements SectionIndexer{
 
-    private List<BusinessDirectionDTO> list;
+    private List<String > list;
     private LayoutInflater layoutInflater;
 
-    public BusinessDirectionAdapter(Context context, List<BusinessDirectionDTO> list) {
+    public BusinessDirectionAdapter(Context context, List<String> list) {
         this.list = list;
         layoutInflater = (LayoutInflater)context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
     }
@@ -47,15 +47,24 @@ public class BusinessDirectionAdapter extends BaseAdapter{
         if(view==null){
             view = layoutInflater.inflate(R.layout.fragment_businnes_direction, parent, false);
         }
-        BusinessDirectionDTO busnessDirection = getBusnessDirection(position);
-
         CheckBox checkBox = (CheckBox)view.findViewById(R.id.busn_dir_checkBox);
-        checkBox.setText(busnessDirection.getName());
+        checkBox.setText((String)getItem(position));
 
         return view;
     }
 
-    private BusinessDirectionDTO getBusnessDirection(int position){
-        return (BusinessDirectionDTO) getItem(position);
+    @Override
+    public Object[] getSections() {
+        return new Object[0];
+    }
+
+    @Override
+    public int getPositionForSection(int sectionIndex) {
+        return 0;
+    }
+
+    @Override
+    public int getSectionForPosition(int position) {
+        return 0;
     }
 }

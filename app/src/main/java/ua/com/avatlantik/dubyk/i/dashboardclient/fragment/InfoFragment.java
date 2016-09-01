@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import ua.com.avatlantik.dubyk.i.dashboardclient.MainActivity;
 import ua.com.avatlantik.dubyk.i.dashboardclient.R;
 
 
@@ -43,6 +44,13 @@ public class InfoFragment extends Fragment {
 
         tv.setText(text);
 
+    }
+
+    @Override
+    public void onStop() {
+        MainActivity activity = (MainActivity) getActivity();
+        activity.setToolbarText(getString(R.string.app_name));
+        super.onStop();
     }
 
 

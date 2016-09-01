@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -143,8 +142,7 @@ public class SettingsFragment extends Fragment {
             askToDowloadData();
 
         }else {
-            Toolbar toolbar = (Toolbar) view.getRootView().findViewById(R.id.toolbar);
-            toolbar.setTitle(getString(R.string.app_name));
+            getActivity().getSupportFragmentManager().popBackStack();
         }
 
     }
@@ -159,7 +157,7 @@ public class SettingsFragment extends Fragment {
                 dialog.dismiss();
                 Module_GetURL module_getURL = new Module_GetURL((MainActivity) getActivity());
                 if(module_getURL.getCheckConnektion()) {
-                    //((MainActivity) getActivity()).downloadData();
+                    ((MainActivity) getActivity()).downloadData();
                 }
 
             }
@@ -169,6 +167,7 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
+                getActivity().getSupportFragmentManager().popBackStack();
             }
         });
         AlertDialog alert = builder.create();
@@ -176,7 +175,10 @@ public class SettingsFragment extends Fragment {
 
     }
 
-
-
-
+    @Override
+    public void onStop() {
+        MainActivity activity = (MainActivity) getActivity();
+        activity.setToolbarText(getString(R.string.app_name));
+        super.onStop();
+    }
 }

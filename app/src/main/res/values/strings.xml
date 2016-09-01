@@ -46,6 +46,7 @@
     <string name="questions_Exit">Ви впевнені що хочете вийти ?</string>
     <string name="questions_Exit_answer_yes">Так</string>
     <string name="questions_Exit_answer_no">Ні</string>
+    <string name="double_back_pressed_text">Для виходу з програми нажміть ще раз кнопку Назад.</string>
 
     //===Download data
     <string name="error_retrieving_data">Помилка отримання даних</string>

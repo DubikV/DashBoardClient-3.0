@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#add4e4">
+    android:background="@drawable/side_nav_bar">
 
     <TextView
         android:layout_width="match_parent"
@@ -12,24 +12,22 @@
         android:id="@+id/busn_dir_textView"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_weight="1" />
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"/>
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:id="@+id/busn_dir_listView"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_weight="100" />
+        android:layout_weight="1" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/businnes_direction_generate"
         android:id="@+id/busn_dir_button"
-        android:layout_weight="1" />
+        android:layout_weight="0.05" />
 </LinearLayout>

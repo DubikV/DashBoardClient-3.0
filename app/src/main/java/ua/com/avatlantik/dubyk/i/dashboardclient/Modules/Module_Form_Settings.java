@@ -3,15 +3,14 @@ package ua.com.avatlantik.dubyk.i.dashboardclient.Modules;
 import android.content.res.Configuration;
 
 import ua.com.avatlantik.dubyk.i.dashboardclient.Constants.ConstantsForms;
-import ua.com.avatlantik.dubyk.i.dashboardclient.fragment.FragmentGraph;
 
 public class Module_Form_Settings {
 
-    FragmentGraph activity;
-
-    public Module_Form_Settings(FragmentGraph activity) {
-        this.activity = activity;
-    }
+//    FragmentGraph activity;
+//
+//    public Module_Form_Settings(FragmentGraph activity) {
+//        this.activity = activity;
+//    }
 
     public int getSizeHeightView(String nameSize, int heightLayout, int orientation) {
 

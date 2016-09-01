@@ -32,9 +32,8 @@ public class Module_GetURL {
         this.mainActivity = mainActivity;
     }
 
-    public String getGetURL(String dataName){
+    public String getGetURL(String dataAdress){
 
-        String textURL;
 
         if(settingsUser.getUserLogin()==null || settingsUser.getUserLogin().isEmpty()){
             mainActivity.setToastToActivity((mainActivity.getString(R.string.error_login_null)));
@@ -46,7 +45,7 @@ public class Module_GetURL {
             return "";
         }
 
-        return "http://" + settingConnect.getAdressServer() + ConstantsGlobal.HTTPSERVICE_1C_NAME + "/" + dataName;
+        return "http://" + settingConnect.getAdressServer() + ConstantsGlobal.HTTPSERVICE_1C_NAME + "/" + dataAdress;
 
     }
 
