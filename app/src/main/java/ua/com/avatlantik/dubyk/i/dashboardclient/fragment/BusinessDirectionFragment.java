@@ -1,5 +1,6 @@
 package ua.com.avatlantik.dubyk.i.dashboardclient.fragment;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import ua.com.avatlantik.dubyk.i.dashboardclient.Constants.ConstantsGlobal;
+import ua.com.avatlantik.dubyk.i.dashboardclient.Database.DBHelper;
 import ua.com.avatlantik.dubyk.i.dashboardclient.R;
 import ua.com.avatlantik.dubyk.i.dashboardclient.adapter.BusinessDirectionAdapter;
 
@@ -60,17 +63,16 @@ public class BusinessDirectionFragment extends Fragment {
 
     private void initData() {
 
-//        list =  new ArrayList<String>();
-//        DBHelper dbHelper = new DBHelper(getActivity());
-//
-//        Cursor res = dbHelper.getDataWithSelection(ConstantsGlobal.TABLE_COLUMN_BN_NAME,
-//                ""+ConstantsGlobal.TABLE_COLUMN_TYPE_DATA+""+ConstantsGlobal.TYPE_DATA_BN_DATA);
-//
-//        while(res.isAfterLast() == false){
-//            list.add(res.getString(res.getColumnIndex(ConstantsGlobal.TABLE_COLUMN_BN_NAME)));
-//            res.moveToNext();
-//        }
-        list = getList();
+        list =  new ArrayList<String>();
+        DBHelper dbHelper = new DBHelper(getActivity());
+
+        Cursor res = dbHelper.getDataWithSelection(ConstantsGlobal.TABLE_COLUMN_BN_NAME,
+                ""+ConstantsGlobal.TABLE_COLUMN_TYPE_DATA+" = '"+ConstantsGlobal.TYPE_DATA_BN_DATA+"'");
+
+        while(res.isAfterLast() == false){
+            list.add(res.getString(res.getColumnIndex(ConstantsGlobal.TABLE_COLUMN_BN_NAME)));
+            res.moveToNext();
+        }
 
     }
 
@@ -98,20 +100,4 @@ public class BusinessDirectionFragment extends Fragment {
 
     }
 
-    private List<String> getList(){
-        List<String> list = new ArrayList<String>();
-        list.add("Свині");
-        list.add("ВРХ");
-        list.add("Птиця");
-        list.add("Кормові добавки");
-        list.add("Оборудование");
-        list.add("ПСП");
-        list.add("МОЛОКО");
-        list.add("Сировина");
-        list.add("Услуги");
-        list.add("Прочее");
-        list.add("Ритейл");
-        list.add("Корма");
-        return list;
-    }
 }

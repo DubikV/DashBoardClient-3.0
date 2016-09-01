@@ -152,13 +152,9 @@ public class DownloadData extends AsyncTask<String, Integer, String> {
 
             dataJsonArray = new JSONArray(strJson);
 
-            JSONObject dataObject = dataJsonArray.getJSONObject(0);
+            for (int i = 0; i < dataJsonArray.length(); i++) {
 
-            JSONArray dataArray = dataObject.getJSONArray("data");
-
-            for (int i = 0; i < dataArray.length(); i++) {
-
-                JSONObject dataO = dataArray.getJSONObject(i);
+                JSONObject dataO = dataJsonArray.getJSONObject(i);
 
                 dbHelper.insertData(dataO.optString(ConstantsGlobal.TABLE_COLUMN_BN_NAME,""),
                         dataO.optString(ConstantsGlobal.TABLE_COLUMN_BN_GUID,""),
