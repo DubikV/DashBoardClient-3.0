@@ -14,7 +14,6 @@ import android.widget.Toast;
 import ua.com.avatlantik.dubyk.i.dashboardclient.Constants.ConstantsGlobal;
 import ua.com.avatlantik.dubyk.i.dashboardclient.Modules.Module_GetURL;
 import ua.com.avatlantik.dubyk.i.dashboardclient.Modules.Module_ReadWrite_Data;
-import ua.com.avatlantik.dubyk.i.dashboardclient.Settings.SettingConnect;
 import ua.com.avatlantik.dubyk.i.dashboardclient.fragment.BusinessDirectionFragment;
 import ua.com.avatlantik.dubyk.i.dashboardclient.fragment.InfoFragment;
 import ua.com.avatlantik.dubyk.i.dashboardclient.fragment.SettingsFragment;
@@ -138,11 +137,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         String textURL = "";
-        if (SettingConnect.getInstance().isAvtoDownload()){
+//        if (SettingConnect.getInstance().isAvtoDownload()){
             textURL = "getDataDTO?type="+ ConstantsGlobal.TYPE_DATA_BN_DATA;
-        }else{
-            textURL = "getDataDTO";
-        }
+//        }else{
+//            textURL = "getDataDTO";
+//        }
 
         if(module_getURL.getCheckConnektion()) {
 

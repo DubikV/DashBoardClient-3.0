@@ -13,8 +13,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import ua.com.avatlantik.dubyk.i.dashboardclient.Constants.ConstantsGlobal;
-import ua.com.avatlantik.dubyk.i.dashboardclient.Database.DBHelper;
 import ua.com.avatlantik.dubyk.i.dashboardclient.R;
 import ua.com.avatlantik.dubyk.i.dashboardclient.adapter.BusinessDirectionAdapter;
 
@@ -62,10 +60,17 @@ public class BusinessDirectionFragment extends Fragment {
 
     private void initData() {
 
-        DBHelper dbHelper = new DBHelper(getActivity());
-        list = dbHelper.getDataOneColumString(ConstantsGlobal.TABLE_COLUMN_BN_NAME);
-
-        //list = getList();
+//        list =  new ArrayList<String>();
+//        DBHelper dbHelper = new DBHelper(getActivity());
+//
+//        Cursor res = dbHelper.getDataWithSelection(ConstantsGlobal.TABLE_COLUMN_BN_NAME,
+//                ""+ConstantsGlobal.TABLE_COLUMN_TYPE_DATA+""+ConstantsGlobal.TYPE_DATA_BN_DATA);
+//
+//        while(res.isAfterLast() == false){
+//            list.add(res.getString(res.getColumnIndex(ConstantsGlobal.TABLE_COLUMN_BN_NAME)));
+//            res.moveToNext();
+//        }
+        list = getList();
 
     }
 
