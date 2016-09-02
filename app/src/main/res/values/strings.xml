@@ -104,4 +104,5 @@
     //===Businnes direction
     <string name="businnes_direction_select">Виберіть бізнес напрямок :</string>
     <string name="businnes_direction_generate">Сформувати</string>
+    <string name="no_data">no data</string>
 </resources>

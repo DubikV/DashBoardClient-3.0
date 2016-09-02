@@ -45,7 +45,7 @@ public class BusinessDirectionAdapter extends BaseAdapter implements SectionInde
 
         View view = convertView;
         if(view==null){
-            view = layoutInflater.inflate(R.layout.fragment_businnes_direction, parent, false);
+            view = layoutInflater.inflate(R.layout.fragment_element_businnes_direction, parent, false);
         }
         CheckBox checkBox = (CheckBox)view.findViewById(R.id.busn_dir_checkBox);
         checkBox.setText((String)getItem(position));
